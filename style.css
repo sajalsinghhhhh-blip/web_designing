@@ -1,0 +1,162 @@
+/* GL Bajaj Online Book Store - style.css */
+
+*{box-sizing:border-box}
+
+/* ---------- PAGE BACKGROUND IMAGE ---------- */
+body{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  color:#2a1f10;
+  background:#fff url("images/page-bg.jpg") repeat;   /* background image for the whole page */
+}
+
+.site{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto 1fr;min-height:100vh;border:1px solid #000}
+
+/* ---------- LOGO ---------- */
+.logo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 16px;
+  border-bottom:1px solid #000;
+  background:#fff;
+}
+.logo img{height:50px;width:auto;object-fit:contain;display:block}
+.logo-fallback{display:none;align-items:center;gap:3px;height:40px}
+
+.color-stripe{width:10px;height:100%;border-radius:2px}
+.stripe-gold{background-color:#d4af37}
+.stripe-maroon{background-color:#7b1113}
+.stripe-dark{background-color:#2b1700}
+
+/* ---------- HEADER TITLE (background image on a single element) ---------- */
+.title{
+  background:#996606 url("images/header-bg.jpg") center/cover no-repeat;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-bottom:1px solid #000;
+  padding:8px;
+}
+.title h1{
+  margin:0;
+  font-family:"Trebuchet MS",Arial,sans-serif;       /* font 1 */
+  font-size:1.6rem;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  text-shadow:2px 2px 3px rgba(0,0,0,.4);
+}
+
+/* ---------- NAVIGATION ---------- */
+nav{grid-column:1/3;display:grid;grid-template-columns:repeat(5,1fr);background:#f7d5b8;border-bottom:1px solid #000}
+nav a{
+  padding:14px 8px;
+  text-align:center;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  font-family:Verdana,Geneva,sans-serif;              /* font 2 */
+  font-size:.95rem;
+  border-right:1px solid #000;
+}
+nav a:last-child{border-right:0}
+nav a:hover,nav a.active{background:#f2bc94}
+
+/* ---------- LEFT PANEL (background image on a single element) ---------- */
+aside{
+  background:#faebd7 url("images/sidebar-bg.jpg") bottom/cover no-repeat;
+  border-right:1px solid #000;
+  grid-column:1;
+}
+aside h3{margin:0;padding:12px 16px;font-size:.95rem;border-bottom:1px solid #000;background:#f2bc94}
+aside a{
+  display:block;
+  padding:16px;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  font-family:Arial,Helvetica,sans-serif;             /* font 3 */
+  font-style:italic;
+  border-bottom:1px solid #d9b88f;
+}
+aside a:hover,aside a.active{background:#f7d5b8}
+
+/* ---------- MAIN CONTENT ---------- */
+main{
+  background:rgba(255,255,255,.88);                   /* keeps text readable over the page image */
+  padding:28px 32px;
+  max-width:100%;
+  overflow-x:auto;
+}
+main h2{
+  margin-top:0;
+  color:#7b1113;
+  font-family:"Courier New",monospace;                /* font 4 */
+  text-decoration:underline;
+}
+main p{
+  line-height:1.7;
+  max-width:70ch;
+  font-family:"Times New Roman",serif;                /* font 5 */
+  font-size:1.05rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn,button,input[type=submit],input[type=reset]{
+  font:inherit;
+  padding:10px 18px;
+  border:1px solid #6b4504;
+  background:#996606;
+  color:#fff;
+  border-radius:5px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+.btn:hover,button:hover,input[type=submit]:hover{background:#6b4504}
+input[type=reset],.ghost{background:#fff;color:#996606}
+
+/* ---------- TABLES ---------- */
+table{border-collapse:collapse;width:100%;background:#fff}
+th,td{border:1px solid #000;padding:12px;text-align:center}
+th{background:#f2bc94}
+td.left{text-align:left;line-height:1.8}
+
+.cover{
+  width:90px;height:120px;margin:auto;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;font-size:13px;font-weight:bold;
+  padding:6px;border-radius:4px;box-shadow:2px 2px 0 rgba(0,0,0,.2);
+}
+
+/* ---------- FORMS ---------- */
+form.box{display:grid;gap:16px;max-width:520px}
+form.box label.row{display:grid;grid-template-columns:150px 1fr;align-items:start;gap:8px}
+input[type=text],input[type=password],input[type=email],input[type=tel],textarea,select{
+  font:inherit;padding:7px;border:1px solid #000;width:100%;
+}
+
+.inline{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.inline input,.inline select{width:auto}
+
+.err{color:#b00020;font-size:.9rem;margin:0}
+.ok{color:#176b2c;font-weight:bold}
+
+#msg{background:#fde8e8;border:1px solid #b00020;padding:10px 14px;display:none}
+#msg ul{margin:0;padding-left:18px}
+
+.qty button{padding:2px 9px}
+.total td,.total th{font-size:1.1rem;background:#faebd7}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:720px){
+  .site{grid-template-columns:1fr;grid-template-rows:auto}
+  nav{grid-column:1;grid-template-columns:repeat(2,1fr)}
+  aside{display:grid;grid-template-columns:repeat(4,1fr);border-right:0;border-bottom:1px solid #000}
+  aside h3{display:none}
+  aside a{text-align:center;padding:12px 4px;border-bottom:0}
+  form.box label.row{grid-template-columns:1fr}
+  main{padding:18px}
+}

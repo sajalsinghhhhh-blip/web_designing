@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | GL Bajaj Book Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site">
+  <!-- TOP LEFT: Logo -->
+  <div class="logo" title="GLBIMR">
+    <img
+      src="logo.jpeg"
+      alt="GLBITM logo"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+    <div class="logo-fallback" style="display:none;">
+      <span class="color-stripe stripe-gold"></span>
+      <span class="color-stripe stripe-maroon"></span>
+      <span class="color-stripe stripe-dark"></span>
+    </div>
+  </div>
+
+  <!-- TOP RIGHT: College Title -->
+  <div class="title">
+    <h1>GL Bajaj Institute Of Technology And Management</h1>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="registration.html">Registration</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="cart.html" class="active">Cart</a>
+  </nav>
+
+  <!-- LEFT SIDEBAR: Branches -->
+  <aside>
+    <h3>Branches</h3>
+    <a href="catalogue.html?branch=CSE" data-branch="CSE">CSE</a>
+    <a href="catalogue.html?branch=ECE" data-branch="ECE">ECE</a>
+    <a href="catalogue.html?branch=EEE" data-branch="EEE">EEE</a>
+    <a href="catalogue.html?branch=CIVIL" data-branch="CIVIL">CIVIL</a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cartBox"></div>
+    <div class="quick">
+      <a class="btn ghost" href="catalogue.html">Continue shopping</a>
+      <button id="clear" type="button">Empty cart</button>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

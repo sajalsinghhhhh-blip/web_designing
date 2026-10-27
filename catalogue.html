@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue | GL Bajaj Book Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site">
+<!-- TOP: logo, college name, links -->
+<div class="logo" title="Replace with your logo image">
+  <img
+    src="logo.jpeg"
+    alt="GLBITM logo"
+    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+  >
+  <div class="logo-fallback" style="display:none;">
+    <span class="color-stripe stripe-gold"></span>
+    <span class="color-stripe stripe-maroon"></span>
+    <span class="color-stripe stripe-dark"></span>
+  </div>
+</div>
+
+<div class="title"><h1>GL Bajaj Institute Of Technology And Management</h1></div>
+<nav>
+<a href="index.html">Home</a>
+<a href="login.html">Login</a>
+<a href="registration.html">Registration</a>
+<a href="catalogue.html" class="active">Catalogue</a>
+<a href="cart.html">Cart</a>
+</nav>
+<!-- LEFT: branch links -->
+<aside>
+<h3>Branches</h3>
+<a href="catalogue.html?branch=CSE" data-branch="CSE">CSE</a>
+<a href="catalogue.html?branch=ECE" data-branch="ECE">ECE</a>
+<a href="catalogue.html?branch=EEE" data-branch="EEE">EEE</a>
+<a href="catalogue.html?branch=CIVIL" data-branch="CIVIL">CIVIL</a>
+</aside>
+<!-- RIGHT: page content -->
+<main>
+<h2 id="catTitle">Book Catalogue</h2>
+<table>
+<thead><tr><th>Book Preview</th><th>Book Details</th><th>Price</th><th>Cart</th></tr></thead>
+<tbody id="books"></tbody>
+</table>
+<p id="added" class="ok"></p>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
